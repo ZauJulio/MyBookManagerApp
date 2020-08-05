@@ -1,14 +1,24 @@
 package com.zlancelot.gerenciadordelivros.dominio;
 
-public class Livro {
+import java.io.Serializable;
+
+public class Livro implements Serializable {
+
     private Long id;
     private String titulo;
     private String autor;
     private String editora;
-    private boolean emprestado;
+    private int emprestado;
 
-    public Livro(Long id, String titulo, String autor, String editora, boolean emprestado) {
+    public Livro(Long id, String titulo, String autor, String editora, int emprestado) {
         this.id = id;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.editora = editora;
+        this.emprestado = emprestado;
+    }
+
+    public Livro(String titulo, String autor, String editora, int emprestado) {
         this.titulo = titulo;
         this.autor = autor;
         this.editora = editora;
@@ -47,11 +57,11 @@ public class Livro {
         this.editora = editora;
     }
 
-    public boolean isEmprestado() {
+    public int getEmprestado() {
         return emprestado;
     }
 
-    public void setEmprestado(boolean emprestado) {
+    public void setEmprestado(int emprestado) {
         this.emprestado = emprestado;
     }
 }
